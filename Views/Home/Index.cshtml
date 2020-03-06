@@ -1,25 +1,68 @@
 ﻿@using SchoolTemplate.Database;
 @model List<Product>
 @{
-  ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-  <h1 class="display-4">Welkom alle mensen.</h1>
-  <ul>
-    @foreach (Product p in Model)
-    {
-      <li>
-        @p.Naam @p.Prijs euro
-      </li>
-    }
-  </ul>
-  
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="site.css">
+</head>
+
+
+
+<html>
+<head>
+    <title>HTML menu</title>
+    <link rel="stylesheet" type="text/css" href="site.css">
+</head>
+
+
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#"><b><font color=" white">Actuele films</font></b></a></li>
+            <li><a href="#"><b><font color=" white">Films voor kids</font></b></a></li>
+            <li><a href="#"><b><font color=" white">Bioscopen in de buurt</font></b></a></li>
+            <li><a href="#"><b><font color=" white">Contact</font></b></a></li>
+            <li><a href="#"><b><font color=" white">Zoeken...</font></b></a></li>
+        </ul>
+    </div>
+        
+</body>
+
+
+
+
+
+</html>
+
+
+
+
+
+<div style="background-color:white;color:black;padding:30px;margin:5px;">
+    <h2>Hoofdvestigingen</h2>
 </div>
 
-<body style="background-color:powderblue;"> 
-    
-    <h1>Hier kan je ja ja tekst plaatsen.</h1>
-    <p>En hier nog meer tekst.</p>
+
+<ul>
+    @foreach (Product p in Model)
+    {
+        <li>
+            @p.Naam @p.Prijs euro
+        </li>
+    }
+</ul>
+
+
+
+<body style="background-color:#08a5bd;">
+    <center>
+        <h1>.</h1>
+        <p>.</p>
+    </center>
 
 </body>
+

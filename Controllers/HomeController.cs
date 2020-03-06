@@ -52,7 +52,35 @@ namespace SchoolTemplate.Controllers
       return products;
     }
 
-    public IActionResult Privacy()
+        private List<Film> GetFilms()
+        {
+            List<Film> films = new List<Film>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from films", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Film p = new Film
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Naam = reader["Naam"].ToString(),
+                            Beschrijving = (reader["beschrijving"].ToString()),
+                            Datum = DateTime.Parse(reader["datum"].ToString())
+                        };
+                        films.Add(p);
+                    }
+                }
+            }
+
+            return films;
+        }
+
+        public IActionResult Privacy()
     {
       return View();
     }
@@ -62,5 +90,16 @@ namespace SchoolTemplate.Controllers
     {
       return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
-  }
+
+
+        [Route("film/{id}")]
+
+        public IActionResult Film(string id)
+        {
+            ViewData["id"] = id;
+
+            return View();
+        }
+    }
 }
+
