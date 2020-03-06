@@ -22,14 +22,14 @@
 <body>
     <div class="menu">
         <ul>
-            <li><a href="#"><b><font color=" white">Actuele films</font></b></a></li>
+            <li><a href="ACFilms.cshtml"><b><font color=" white">Actuele films</font></b></a></li>
             <li><a href="#"><b><font color=" white">Films voor kids</font></b></a></li>
             <li><a href="#"><b><font color=" white">Bioscopen in de buurt</font></b></a></li>
             <li><a href="#"><b><font color=" white">Contact</font></b></a></li>
             <li><a href="#"><b><font color=" white">Zoeken...</font></b></a></li>
         </ul>
     </div>
-        
+
 </body>
 
 
@@ -42,10 +42,18 @@
 
 
 
-<div style="background-color:white;color:black;padding:30px;margin:5px;">
+<div class="tekst">
     <h2>Hoofdvestigingen</h2>
 </div>
 
+<style>
+ .tekst {
+    width: 195px;
+    border: 5px solid black;
+    padding: 5px;
+    margin: 2px;
+ }
+</style>
 
 <ul>
     @foreach (Product p in Model)
@@ -66,3 +74,22 @@
 
 </body>
 
+
+<style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+</style>
+
+<div class="footer">
+    <p>Bios.nl</p>
+</div>
+
+
+<img src="" alt="Alle hoofdvestigingen in 1 plaatje" width="160" height="145">
