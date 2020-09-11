@@ -1,0 +1,12 @@
+﻿@using SchoolTemplate.Database;
+@model List<Product>
+@{
+  ViewData["Title"] = "Home Page";
+}
+<h1>Contact</h1>
+<form method="post">
+    <input type="text" name="voornaam" placeholder="Voornaam" />
+    <input type="text" name="achternaam" placeholder="Achternaam"/>
+    <input type="datetime" name="geboortedatum"/>
+    <input type="submit" value="verstuur" />
+</form>
