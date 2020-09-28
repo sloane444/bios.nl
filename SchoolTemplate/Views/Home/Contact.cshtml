@@ -1,12 +1,97 @@
-﻿@using SchoolTemplate.Database;
-@model List<Product>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: #111;
+                }
+
+        .active {
+            background-color: #04789d;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href="home" class="active">Home</a></li>
+        <li><a href="films">Films</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li><a href="about">About</a></li>
+    </ul>
+
+</body>
+
+
+
+
+</html>
+
+<h1><strong>Contact</strong></h1>
+<style>
+    h1 {
+        text-align: center;
+        color: #04789d;
+    }
+</style>
+
+@model PersonModel
 @{
-  ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Contact";
 }
-<h1>Contact</h1>
+
+
+
+@if (Model != null)
+{
+   <p>
+       Je voornaam is: @Model.Voornaam <br />
+       Je achternaam is: @Model.Achternaam <br />
+   </p>
+}
+
+@if(ViewData["formsuccess"] == "oke")
+{
+    <p>Gelukt! Bedankt voor het invullen.</p>
+}
+
 <form method="post">
-    <input type="text" name="voornaam" placeholder="Voornaam" />
-    <input type="text" name="achternaam" placeholder="Achternaam"/>
-    <input type="datetime" name="geboortedatum"/>
-    <input type="submit" value="verstuur" />
+    <input type="text" name="voornaam" placeholder="Voornaam" /> <br />
+    <input type="text" name="achternaam" placeholder="Achternaam" /> <br />
+    @Html.ValidationMessageFor(m => m.Achternaam) <br />
+    <input type="text" name="email" placeholder="e-mail" /> <br />
+    @Html.ValidationMessageFor(m => m.Email) <br />
+    <input type="datetime" name="geboortedatum" /> <br />
+    <input type="submit" value="verstuur" /> 
 </form>
+
+<footer class="footer">
+
+
+    <div class="footer-copyright text-center py-3">
+        © 2020 Copyright:
+        <a href="home"> Bios.nl</a>
+    </div>
+
+
+</footer>
