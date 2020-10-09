@@ -69,10 +69,8 @@ namespace SchoolTemplate.Controllers
                         {
                             Id = Convert.ToInt32(reader["Id"]),
                             Naam = reader["Naam"].ToString(),
-                            Calorieen = float.Parse(reader["calorieen"].ToString()),
-                            Formaat = reader["Formaat"].ToString(),
-                            Gewicht = Convert.ToInt32(reader["Gewicht"].ToString()),
-                            Prijs = Decimal.Parse(reader["Prijs"].ToString())
+                            Beschrijving = reader["Beschrijving"].ToString(),
+                            Datum = DateTime.Parse(reader["Datum"].ToString())
                         };
                         films.Add(p);
                     }
@@ -99,6 +97,12 @@ namespace SchoolTemplate.Controllers
             return View();
         }
 
+        [Route("gelukt")]
+        public IActionResult Gelukt()
+        {
+            return View();
+        }
+
         [Route("contact")]
         public IActionResult Contact()
         {
@@ -114,7 +118,7 @@ namespace SchoolTemplate.Controllers
 
             SavePerson(model);
 
-            ViewData["formsuccess"] = "oke";
+            ViewData["formsucces"] = "oke";
 
             return Redirect("/gelukt");
         }
