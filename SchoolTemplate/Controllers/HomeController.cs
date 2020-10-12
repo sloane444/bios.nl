@@ -52,6 +52,34 @@ namespace SchoolTemplate.Controllers
             return products;
         }
 
+        private List<Film> GetFilms()
+        {
+            List<Film> films = new List<Film>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from film", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Film p = new Film
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Naam = reader["Naam"].ToString(),
+                            Beschrijving = reader["Beschrijving"].ToString(),
+                            Datum = DateTime.Parse(reader["Datum"].ToString())
+                        };
+                        films.Add(p);
+                    }
+                }
+            }
+
+            return films;
+        }
+
         public IActionResult Privacy()
         {
             return View();
@@ -69,8 +97,46 @@ namespace SchoolTemplate.Controllers
             return View();
         }
 
+        [Route("gelukt")]
+        public IActionResult Gelukt()
+        {
+            return View();
+        }
 
+        [Route("contact")]
+        public IActionResult Contact()
+        {
+            return View();
+        }
 
+        [Route("contact")]
+        [HttpPost]
+        public IActionResult Contact(PersonModel model)
+        {
+            if(!ModelState.IsValid)
+              return View(model);
+
+            SavePerson(model);
+
+            ViewData["formsucces"] = "oke";
+
+            return Redirect("/gelukt");
+        }
+
+        private void SavePerson(PersonModel person)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(naam, achternaam, emailadres, geb_datum) VALUES(?voornaam,?achternaam,?email,?geb_datum)", conn);
+
+                cmd.Parameters.Add("?voornaam", MySqlDbType.VarChar).Value = person.Voornaam;
+                cmd.Parameters.Add("?achternaam", MySqlDbType.VarChar).Value = person.Achternaam;
+                cmd.Parameters.Add("?email", MySqlDbType.VarChar).Value = person.Email;
+                cmd.Parameters.Add("?geb_datum", MySqlDbType.VarChar).Value = person.Geboortedatum;
+                cmd.ExecuteNonQuery();
+            }
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
