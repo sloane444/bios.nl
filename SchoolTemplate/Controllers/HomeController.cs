@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
@@ -11,12 +12,12 @@ namespace SchoolTemplate.Controllers
     public class PersonModel
     {
         public string Voornaam { get; set; }
-
-        [Required]
+        
+            [Required]
         public string Achternaam { get; set; }
-
-        [Required]
-        [EmailAddress]
+        
+            [Required]
+            [EmailAddress]
         public string Email { get; set; }
 
         public DateTime Geboortedatum{ get; set; }

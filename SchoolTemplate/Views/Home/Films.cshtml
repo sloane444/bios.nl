@@ -45,50 +45,45 @@
 
 </body>
 
-@foreach (Film film in Model)
-{
-    <h1>@film.Naam</h1>
-}
 
-@{
-    ViewData["Naam"] = "Film";
-}
+<style>
+    h4 {
+        color: white;
+    }
+</style>
 
-<h1>@ViewData["id"]</h1>
+<style>
+    p {
+        color: white;
+    }
+</style>
 
+<!-- Grid row -->
 <div class="row">
 
-    
+    <!-- Grid column -->
     <div class="column-2 px-2 mb-r">
 
-        
+        <!--Card-->
         <div class="card">
 
-            
+            <!--Card image-->
             <div class="view">
                 <img src="https://www.91-cdn.com/metareel-images/content/backdrops-1543236998-iDBZ7JsHbCKCYL3MUBjJctOWnTp.jpg" class="card-img-top" alt="photo">
-                
-                    <div class="mask rgba-white-slight">
-                        @foreach (Film film in Model)
-                        {
-                            <h1>@film.Naam</h1>
-                        }
-                                    </div>
-                
+                <a href="#">
+                    <div class="mask rgba-white-slight"></div>
+                </a>
             </div>
 
             <!--Card content-->
             <div class="card-body text-center">
                 <!--Title-->
-                <h4 class="card-title white-text"></h4>
+                <h4 class="card-title white-text">Shrek 1</h4>
                 <!--Text-->
                 <p class="card-text white-text">
-                    @foreach (Film film in Model)
-                    {
-                        <h1>@film.Beschrijving</h1>
-                    }
+                    Shrek is een Amerikaanse komische computeranimatiefilm, geproduceerd door de firma DreamWorks. De film is gebaseerd op het gelijknamige boek van William Steig. De regie was in handen van Andrew Adamson en Vicky Jenson. De stemmen worden ingesproken door Mike Myers, Eddie Murphy, Cameron Diaz, en John Lithgow.
                 </p>
-                <a href="#" class="btn btn-outline-white btn-md">Button</a>
+
             </div>
 
         </div>
@@ -114,14 +109,12 @@
             <!--Card content-->
             <div class="card-body text-center">
                 <!--Title-->
-                <h4 class="card-title white-text">Title of the news</h4>
+                <h4 class="card-title white-text">Shrek 2</h4>
                 <!--Text-->
                 <p class="card-text white-text">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-                    aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                    Nemo enim ipsam voluptatem quia voluptas.
+                    Shrek 2 is een Amerikaanse computeranimatiefilm uit 2004, onder regie van Andrew Adamson, Kelly Asbury en Conrad Vernon. De film is een vervolg op de film Shrek, die in 2001 uitkwam.
                 </p>
-                <a href="#" class="btn btn-outline-white btn-md">Button</a>
+
             </div>
 
         </div>
@@ -138,7 +131,7 @@
 
             <!--Card image-->
             <div class="view">
-                <img src="https://images6.fanpop.com/image/photos/33400000/shrek-the-third-shrek-the-third-33435299-1600-1280.jpg" class="card-img-top" alt="photo">
+                <img src="https://www.pastposters.com/cw3/assets/product_expanded/R/shrek-the-third-cinema-quad-movie-poster-(2).jpg" class="card-img-top" alt="photo">
                 <a href="#">
                     <div class="mask rgba-white-slight"></div>
                 </a>
@@ -147,14 +140,12 @@
             <!--Card content-->
             <div class="card-body text-center">
                 <!--Title-->
-                <h4 class="card-title white-text">Title of the news</h4>
+                <h4 class="card-title white-text">Shrek 3</h4>
                 <!--Text-->
                 <p class="card-text white-text">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-                    aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                    Nemo enim ipsam voluptatem quia voluptas.
+                    Shrek the Third is een Amerikaanse computeranimatiefilm, onder regie van Chris Miller en Raman Hui. Het is de derde film uit de Shrek-reeks. Stemmen worden vertolkt door Mike Myers, Cameron Diaz, Eddie Murphy en Antonio Banderas.
                 </p>
-                <a href="#" class="btn btn-outline-white btn-md">Button</a>
+
             </div>
 
         </div>
@@ -177,7 +168,7 @@
 
             <!--Card image-->
             <div class="view">
-                <img src="" class="card-img-top" alt="photo">
+                <img src="https://3.bp.blogspot.com/-WJagwMyaoY8/WUWs7g6wveI/AAAAAAAB91E/OdW6V-pJwGManM80xZogUh34YOfHuXBAQCLcBGAs/s1600/Shrek_Forever_After_movieloversreviews.filiminspector.com_1.jpg" class="card-img-top" alt="photo">
                 <a href="#">
                     <div class="mask rgba-white-slight"></div>
                 </a>
@@ -186,14 +177,12 @@
             <!--Card content-->
             <div class="card-body text-center">
                 <!--Title-->
-                <h4 class="card-title white-text">Title of the news</h4>
+                <h4 class="card-title white-text">Shrek Forever After</h4>
                 <!--Text-->
                 <p class="card-text white-text">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-                    aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                    Nemo enim ipsam voluptatem quia voluptas.
+                    Shrek Forever After is een Amerikaanse computeranimatiefilm, geregisseerd door Mike Mitchell en geproduceerd door DreamWorks Animation. Het is de vierde film in de Shrek-reeks. De film ging in de Verenigde Staten in première op 21 april 2010. In Nederland en België kwam de film in juli 2010 uit.
                 </p>
-                <a href="#" class="btn btn-outline-white btn-md">Button</a>
+
             </div>
 
         </div>
@@ -211,7 +200,7 @@
 
             <!--Card image-->
             <div class="view">
-                <img src="" class="card-img-top" alt="photo">
+                <img src="https://i.redd.it/8b5738bnes641.jpg" class="card-img-top" alt="photo">
                 <a href="#">
                     <div class="mask rgba-white-slight"></div>
                 </a>
@@ -220,18 +209,34 @@
             <!--Card content-->
             <div class="card-body text-center">
                 <!--Title-->
-                <h4 class="card-title white-text">Title of the news</h4>
+                <h4 class="card-title white-text">Shrek 5</h4>
                 <!--Text-->
                 <p class="card-text white-text">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-                    aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                    Nemo enim ipsam voluptatem quia voluptas.
+                    Shrek 5 is als eerste uit in Nederland op Bios.nl. Shrek Forever After is een Amerikaanse computeranimatiefilm, geregisseerd door Mike Mitchell en geproduceerd door DreamWorks Animation. Het is de vijfde film uit de shrek-reeks en een vervolg op de film: Shrek Forever After.
                 </p>
-                <a href="#" class="btn btn-outline-white btn-md">Button</a>
+
             </div>
 
         </div>
         <!--/.Card-->
+
+        @foreach (Film film in Model)
+        {
+            <h1>@film.Naam</h1>
+        }
+
+        @{
+            ViewData["Naam"] = "Film";
+        }
+
+        <h1>@ViewData["id"]</h1>
+
+        <style>
+            h1 {
+                font-size: 14px;
+            }
+        </style>
+
 
         <footer class="footer">
 
@@ -243,5 +248,7 @@
 
 
         </footer>
+
+
 
 </html>

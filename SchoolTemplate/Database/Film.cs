@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace SchoolTemplate.Database
 {
@@ -6,10 +7,11 @@ namespace SchoolTemplate.Database
   {
     public int Id { get; set; }
 
-    [Required]
+        [Required]
     public string Naam { get; set; }
-    [Required]
-    [EmailAddress]
+
+        [Required]
+        [EmailAddress]
     public string Beschrijving { get; set; }    
 
     public DateTime Datum { get; set; }

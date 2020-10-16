@@ -31,7 +31,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: white;">
 
     <ul>
         <li><a href="home">Home</a></li>
@@ -55,6 +55,10 @@
     }
 </style>
 
+
+
+<br />
+
 @model PersonModel
 @{
     ViewData["Title"] = "Contact";
@@ -76,14 +80,24 @@
 }
 
 <form method="post">
-    <input type="text" name="voornaam" placeholder="Voornaam" /> <br />
+    <input type="text" name="voornaam" placeholder="Voornaam" /> <br /> <br />
     <input type="text" name="achternaam" placeholder="Achternaam" /> <br />
     @Html.ValidationMessageFor(m => m.Achternaam) <br />
     <input type="text" name="email" placeholder="e-mail" /> <br />
     @Html.ValidationMessageFor(m => m.Email) <br />
-    <input type="datetime" name="geboortedatum" placeholder="Datum xx-xx-xxxx" /> <br />
+    <input type="datetime" name="geboortedatum" placeholder="Datum xx-xx-xxxx" /> <br /> <br />
     <input type="submit" value="verstuur" /> 
 </form>
+
+<style>
+    form {
+        text-align: center;
+    }
+</style>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
 
 <footer class="footer">
 
