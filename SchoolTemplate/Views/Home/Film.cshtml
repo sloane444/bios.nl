@@ -1,0 +1,64 @@
+﻿@using SchoolTemplate.Database;
+@model Film
+@{
+
+}
+<!DOCTYPE html>
+<style>
+    h3 {
+        text-align: center;
+        font-size: 80px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: left;
+    }
+
+        li a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+            li a:hover {
+                background-color: #111;
+            }
+
+    .active {
+        background-color: #04789d;
+    }
+
+    img {
+        width: 1000px;
+        height: 500px;
+        align-content : center;   }
+</style>
+
+<html>
+
+<ul>
+    <li><a href="home" class="active">Home</a></li>
+    <li><a href="films">Films</a></li>
+
+    <li><a href="contact">Contact</a></li>
+    <li><a href="about">About</a></li>
+</ul>
+<h3> @Model.Naam </h3>
+<img src="@Model.Foto"/>
+<p> @Model.Beschrijving</p>
+
+</html>

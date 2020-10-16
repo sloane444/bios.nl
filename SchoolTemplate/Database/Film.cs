@@ -15,6 +15,8 @@ namespace SchoolTemplate.Database
     public string Beschrijving { get; set; }    
 
     public DateTime Datum { get; set; }
+    
+    public string Foto { get; set; }
 
   }
 }

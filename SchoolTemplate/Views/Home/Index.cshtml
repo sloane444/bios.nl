@@ -1,5 +1,5 @@
 ﻿@using SchoolTemplate.Database;
-@model List<Product>
+@model List<Film>
 @{
 
 }
@@ -42,9 +42,10 @@
     <ul>
         <li><a href="home" class="active">Home</a></li>
         <li><a href="films">Films</a></li>
-        <li><a href="Shrek">Shrek </a></li>
-        <li><a href="#">Shrek 2 </a></li>
-        <li><a href="#">Shrek 3</a></li>
+        @foreach(Film film in Model)
+        {
+            <li> <a href="/film/@film.Id">@film.Naam</a> </li>
+        }
         <li><a href="contact">Contact</a></li>
         <li><a href="about">About</a></li>
     </ul>

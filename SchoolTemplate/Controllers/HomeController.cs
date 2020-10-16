@@ -16,11 +16,11 @@ namespace SchoolTemplate.Controllers
 
         public IActionResult Index()
         {
-            List<Product> products = new List<Product>();
+            List<Film> films = new List<Film>();
             // uncomment deze regel om producten uit je database toe te voegen
-            products = GetProducts();
+            films = GetFilms();
 
-            return View(products);
+            return View(films);
         }
 
         private List<Product> GetProducts()
@@ -81,14 +81,14 @@ namespace SchoolTemplate.Controllers
             return films;
         }
 
-        private Film GetFilms(string id)
+        private Film GetFilm(string id)
         {
             List<Film> films = new List<Film>();
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"select * from product where id = {id}", conn);
+                MySqlCommand cmd = new MySqlCommand($"select * from film where id = {id}", conn);
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -96,10 +96,11 @@ namespace SchoolTemplate.Controllers
                     {
                         Film p = new Film
                         {
-                            Id = Convert.ToInt32(reader["Id"]),
-                            Naam = reader["Naam"].ToString(),
-                            Beschrijving = reader["Beschrijving"].ToString(),
-                            Datum = DateTime.Parse(reader["Datum"].ToString())
+                            Id = Convert.ToInt32(reader["id"]),
+                            Naam = reader["naam"].ToString(),
+                            Beschrijving = reader["beschrijving"].ToString(),
+                            Datum = DateTime.Parse(reader["datum"].ToString()),
+                            Foto = reader["Foto"].ToString(),
                         };
                         films.Add(p);
                     }
@@ -112,17 +113,9 @@ namespace SchoolTemplate.Controllers
         [Route("film/{id}")]
         public IActionResult Film(string id)
         {
-            ViewData["id"] = id;
+            var film = GetFilm(id);
 
-            return View();
-        }
-
-        [Route("film/{id}")]
-        public IActionResult Films(string id)
-        {
-            var model = GetFilms(id);
-
-            return View(model);
+            return View(film);
         }
 
         public IActionResult Privacy()
