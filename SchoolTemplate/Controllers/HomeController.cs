@@ -9,24 +9,10 @@ using SchoolTemplate.Models;
 
 namespace SchoolTemplate.Controllers
 {
-    public class PersonModel
-    {
-        public string Voornaam { get; set; }
-        
-            [Required]
-        public string Achternaam { get; set; }
-        
-            [Required]
-            [EmailAddress]
-        public string Email { get; set; }
-
-        public DateTime Geboortedatum{ get; set; }
-
-    }
     public class HomeController : Controller
     {
         // zorg ervoor dat je hier je gebruikersnaam (leerlingnummer) en wachtwoord invult
-        string connectionString = "Server=172.16.160.21;Port=3306;Database=110032;Uid=110032;Pwd=YOUsTUBi;";
+        string connectionString = "Server= informatica.st-maartenscollege.nl;Port=3306;Database=110032;Uid=110032;Pwd=YOUsTUBi;";
 
         public IActionResult Index()
         {
