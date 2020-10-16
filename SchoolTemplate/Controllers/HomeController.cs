@@ -8,6 +8,20 @@ using SchoolTemplate.Models;
 
 namespace SchoolTemplate.Controllers
 {
+    public class PersonModel
+    {
+        public string Voornaam { get; set; }
+
+        [Required]
+        public string Achternaam { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        public DateTime Geboortedatum{ get; set; }
+
+    }
     public class HomeController : Controller
     {
         // zorg ervoor dat je hier je gebruikersnaam (leerlingnummer) en wachtwoord invult
