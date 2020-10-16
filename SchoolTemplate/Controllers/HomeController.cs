@@ -80,6 +80,50 @@ namespace SchoolTemplate.Controllers
             return films;
         }
 
+        private Film GetFilms(string id)
+        {
+            List<Film> films = new List<Film>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand($"select * from product where id = {id}", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Film p = new Film
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Naam = reader["Naam"].ToString(),
+                            Beschrijving = reader["Beschrijving"].ToString(),
+                            Datum = DateTime.Parse(reader["Datum"].ToString())
+                        };
+                        films.Add(p);
+                    }
+                }
+            }
+
+            return films[0];
+        }
+
+        [Route("film/{id}")]
+        public IActionResult Film(string id)
+        {
+            ViewData["id"] = id;
+
+            return View();
+        }
+
+        [Route("film/{id}")]
+        public IActionResult Films(string id)
+        {
+            var model = GetFilms(id);
+
+            return View(model);
+        }
+
         public IActionResult Privacy()
         {
             return View();
