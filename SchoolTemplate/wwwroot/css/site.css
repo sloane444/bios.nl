@@ -33,6 +33,10 @@ body {
 
 /* Other Classes for Page Styling */
 
+.card {
+    background-color: #08a5bd;
+}
+
 body {
     background: #ffffff;
     
