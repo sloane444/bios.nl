@@ -1,8 +1,5 @@
 ﻿@using SchoolTemplate.Database;
-@model List<Product>
-@{
-
-}
+@model List<Film>
 
 <!DOCTYPE html>
 <html>
@@ -48,6 +45,9 @@
 
 </body>
 
+@foreach (Film film in Model) {
+    <h1>@film.Naam</h1>
+}
 
 <footer class="footer">
 

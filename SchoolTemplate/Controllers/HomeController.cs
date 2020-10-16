@@ -11,7 +11,7 @@ namespace SchoolTemplate.Controllers
     public class HomeController : Controller
     {
         // zorg ervoor dat je hier je gebruikersnaam (leerlingnummer) en wachtwoord invult
-        string connectionString = "Server=172.16.160.21;Port=3306;Database=110203;Uid=110203;Pwd=oNTragER;";
+        string connectionString = "Server=172.16.160.21;Port=3306;Database=110032;Uid=110032;Pwd=YOUsTUBi;";
 
         public IActionResult Index()
         {
@@ -88,7 +88,8 @@ namespace SchoolTemplate.Controllers
             [Route("films")]
         public IActionResult Films()
         {
-            return View();
+            var films = GetFilms();
+            return View(films);
         }
 
         [Route("about")]
@@ -133,7 +134,7 @@ namespace SchoolTemplate.Controllers
                 cmd.Parameters.Add("?voornaam", MySqlDbType.VarChar).Value = person.Voornaam;
                 cmd.Parameters.Add("?achternaam", MySqlDbType.VarChar).Value = person.Achternaam;
                 cmd.Parameters.Add("?email", MySqlDbType.VarChar).Value = person.Email;
-                cmd.Parameters.Add("?geb_datum", MySqlDbType.VarChar).Value = person.Geboortedatum;
+                cmd.Parameters.Add("?geb_datum", MySqlDbType.Date).Value = person.Geboortedatum;
                 cmd.ExecuteNonQuery();
             }
         }
